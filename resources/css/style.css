@@ -1,0 +1,76 @@
+html {
+  background-color: #fffff9;
+  font-size: 20px;
+  font-family: Helvetica;
+}
+
+#page {
+  font-size: 3rem;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+span {
+  font-family: Helvetica;
+  color: black;
+  font-size: 9rem;
+}
+.directions {
+margin: auto;
+ color: black;
+ width: 40%;
+ border: 3px solid black;
+ border-radius: 5px;
+}
+
+p {
+  padding: 30px;
+}
+
+header {
+  margin-bottom: 20px;
+}
+.logo {
+  width: 50%;
+  height: auto;
+  margin: auto;
+  overflow: hidden;
+}
+
+.logo img {
+  width: 100%;
+  height: auto;
+}
+
+.check {
+  margin: auto;
+}
+
+i {
+  padding: 1rem 1rem;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Start Game Direction Box*/
+#start,
+#endScreen {
+  padding: 1rem;
+  border: 5px solid #98bed9;
+  border-radius: 15px;
+  font-weight: 900;
+  font-size: 2rem;
+  transition: all 250ms ease-in-out;
+}
+
+h3#start:hover {
+  color: #fff;
+  background-color: #98bed9;
+}
