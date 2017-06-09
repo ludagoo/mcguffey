@@ -16,6 +16,7 @@ span {
   font-family: Helvetica;
   color: black;
   font-size: 9rem;
+  text-shadow: 2px 2px gray;
 }
 .directions {
 margin: auto;

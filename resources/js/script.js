@@ -1,21 +1,28 @@
 
 var mcguffey = {};
+var day = ['lesson1', 'lesson2', 'lesson3'];
 var lesson1 = [['a', 'cheer.mp3'], ['cat','chime.mp3'], ['rat','chime.mp3'], ['and','cheer.mp3']];
+var lesson2 = [['day2.1','chime.mp3'], ['day2.2','chime.mp3'], ['day2.3','chime.mp3']];
+var lesson3 = [['day3.1','chime.mp3'], ['day3.2','chime.mp3'], ['day3.3','chime.mp3']];
 var lesson = 0;
 var word = 0;
 var times = 0;
+var length = 0;
 var $page = $('#page');
 var $yes = $('#yes');
 var $no = $('#no');
 var n = [];
+var d = "";
 var practice = [];
 var random = "";
-
+var dayNumber = 0;
 
 $(document).ready(function() {
 
+
   $("#start").click(function() {
       $('.directions').css('display', 'none');
+      console.log('lessons');
       again();
    })
 
@@ -30,10 +37,12 @@ function again() {
 
 function practiceWords() {
   console.log('practice words');
-  var length = lesson1.length;
+  console.log(day[userInput]);
+  d = eval(day[userInput]);
+  var length = d.length;
   console.log(length);
   for (var i=0; i < length; i++) {
-    w = lesson1[word]; //chooses the written word
+    w = d[word]; //chooses the written word
     console.log(word);
     practice.push(w);
     console.log(w);
@@ -52,6 +61,7 @@ function writeWords($page, practice) {
   $page.html('<span>' + random + '</span>');
 
   $page.click(function() {
+  $('span').css('text-shadow', '0px 0px white');
   var audio = new Audio(practice[index][1]);
   audio.play();
     window.setTimeout(function() {
