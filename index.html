@@ -12,32 +12,619 @@
   </head>
   <body>
     <header>
+      <!--<a href="index.html">-->
+        <button id="unorderedList">Lesson List</button>
+      <!--</a>-->
       <div class=logo>
-    <img src="./resources/images/EPYouTubeBanner2-01.jpg" / />
+        <a target="_blank" href="https://allinonehomeschool.com">
+          <img class="long" src="./resources/images/EPYouTubeBanner2-01.jpg" />
+          <img class="small" src="./resources/images/EPLogoSquare.jpg" />
+          <img class="white" src="./resources/images/EPLogoFinalNoWords.jpg"/>
+        </a>
       </div>
+      <button id="directions">Directions</button>
     </header>
-  <div class=directions id="start">
-    <p>
-      Read the word. If you don't know it, click on it to hear it. Then say the word out loud and click on the X. If you can say the word before you click on it, click on the check mark. Click to begin. I'M READY!
-    </p>
-  </div>
-  <div class=directions id="endScreen">
-    <p>
-      Great Job. Take a break and then come back and read some more.
-    </p>
-  </div>
-  <div class="column">
-  <div id='page'></div>
-  <div class="check">
-    <i id="yes" style="color:green;" class="fa fa-check fa-5x"></i>
-  <!--  <i id="no" style="color:red;" class="fa fa-close fa-5x"></i>-->
-  </div> <!--closes check-->
-</div> <!--closes column-->
-    <script
-      src="https://code.jquery.com/jquery-3.1.1.min.js"
-      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-      crossorigin="anonymous"></script>
-     <script type="text/javascript" src="./resources/js/script.js"></script>
 
-  </body>
-</html>
+    <div id="readButton">
+      <button>Read the Story</button>
+    </div>
+
+<div class=directions>
+      <p>
+        Choose your lesson from the lesson list. Click on the Lesson List button any time to get the list. It will show you which lessons you've clicked on. If you know the word, say it out loud. Then click on it to hear it. When you know all the words, click on the Read the Story button.
+      </p>
+       </br>
+      <p>
+        The lesson shows each word one time and then randomly shows the words. That means sometimes the same word will show up again. After a set number of times based on the number of words, a check mark will appear and you can end that part of the exercise if you are ready. It will then show the words beginning with a capital letter and will talk about each word, often using it in a sentence for clarity.
+       </p>
+     </br>
+      <p>
+        I have made some slight edits to the McGuffey Primer, mostly to modernize it, just a little. Instead of liking to watch the boys at play, the girls like to play too! Several names have changed as well. The name Ann changed to Anna, not to modernize it, but just because it's hard for little ones to say and hear the difference between Ann and "and" which both appear in just the second lesson.
+       </p>
+       </br>
+      <p>
+        Make sure to close these directions!
+       </p>
+       </br>
+      <p id="closeDirections">CLOSE</p>
+    </div>
+
+<ul id=lessonList>
+      <li>
+        <span id="lesson1" class="choose">Lesson 1</span>
+      </li>
+      <li>
+        <span id="lesson2" class="choose">Lesson 2</span>
+      </li>
+      <li>
+        <span id="lesson3" class="choose">Lesson 3</span>
+      </li>
+      <li>
+        <span id="lesson4" class="choose">Lesson 4</span>
+      </li>
+      <li>
+        <span id="lesson5" class="choose">Lesson 5</span>
+      </li>
+      <li>
+        <span id="lesson6" class="choose">Lesson 6</span>
+      </li>
+      <li>
+        <span id="lesson7" class="choose">Lesson 7</span>
+      </li>
+      <li>
+        <span id="lesson8" class="choose">Lesson 8</span>
+      </li>
+      <li>
+        <span id="lesson9" class="choose">Lesson 9</span>
+      </li>
+      <li>
+        <span id="lesson10" class="choose">Lesson 10</span>
+      </li>
+      <li>
+        <span id="lesson11" class="choose">Lesson 11</span>
+      </li>
+      <li>
+        <span id="lesson12" class="choose">Lesson 12</span>
+      </li>
+      <li>
+        <span id="lesson13" class="choose">Lesson 13</span>
+      </li>
+      <li>
+        <span id="lesson14" class="choose">Lesson 14</span>
+      </li>
+      <li>
+        <span id="lesson15" class="choose">Lesson 15</span>
+      </li>
+      <li>
+        <span id="lesson16" class="choose">Lesson 16</span>
+      </li>
+      <li>
+        <span id="lesson17" class="choose">Lesson 17</span>
+      </li>
+      <li>
+        <span id="lesson18" class="choose">Lesson 18</span>
+      </li>
+      <li>
+        <span id="lesson19" class="choose">Lesson 19</span>
+      </li>
+      <li>
+        <span id="lesson20" class="choose">Lesson 20</span>
+      </li>
+    </ul>
+
+<div id="endScreen"></div>
+         <div class="column">
+         <div id='page'></div>
+         <div class="check">
+           <i id="yes" style="color:green;" class="fa fa-check fa-5x"></i>
+         </div> <!--closes check-->
+       </div> <!--closes column-->
+
+<div class="stories" id="story1">
+         <h3>
+           Lesson 1
+         </h3>
+         <img src="./resources/images/lesson1.jpg" />
+        <p class="phrases">
+          <span>a rat</span>
+          <span>a cat</span>
+          <span>A cat</span>
+          <span>A rat</span>
+        </p>
+        <p>
+          A cat and a rat.
+          <br />
+          <br />
+          A rat and a cat.
+          </p>
+         <button class="readToMe">Read to Me</button>
+         <button class="readIt">I Read It!</button>
+       </div>
+
+<div class="stories" id="story2">
+         <h3>
+           Lesson 2
+         </h3>
+         <img src="./resources/images/lesson2.jpg" />
+         <p class="phrases">
+           <span>the cat</span>
+           <span>the rat</span>
+         </p>
+          <p>
+           The cat has a rat.
+                <br />
+                <br />
+          The rat ran at Anna.
+                <br />
+                <br />
+          Anna has a cat.
+                <br />
+                <br />
+            The cat ran at the rat.
+                <br />
+                <br />
+              A rat and a cat.
+              </p>
+              <button class="readToMe">Read to Me</button>
+              <button class="readIt">I Read It!</button>
+           </div>
+
+<div class="stories" id="story3">
+             <h3>
+               Lesson 3
+             </h3>
+             <img src="./resources/images/lesson3.jpg" />
+            <p class="phrases">
+              <span>a fan</span>
+              <span>a hat</span>
+            </p>
+            <p>
+        Anna and Dan.
+        <br />
+        <br />
+        Anna has a fan.
+        <br />
+        <br />
+        Dan has a hat.
+        <br />
+        <br />
+        Anna can fan.
+                  </p>
+                  <button class="readToMe">Read to Me</button>
+                  <button class="readIt">I Read It!</button>
+               </div>
+
+<div class="stories" id="story4">
+         <h3>
+           Lesson 4
+         </h3>
+         <img src="./resources/images/lesson4.jpg" />
+        <p class="phrases">
+          <span>a cap</span>
+          <span>the lad</span>
+          <span>A cat</span>
+          <span>A rat</span>
+        </p>
+      <p>
+        <p>
+          A man and a lad.
+          <br />
+          <br />
+        The man sat; the lad ran.
+        <br />
+        <br />
+        The man has a hat.
+        <br />
+        <br />
+        The lad has a cap
+          </p>
+          <button class="readToMe">Read to Me</button>
+          <button class="readIt">I Read It!</button>
+       </div>
+
+<div class="stories" id="story5">
+         <h3>
+           Lesson 5
+         </h3>
+        <p>
+          The cat and the rat ran.
+          </br>
+          </br>
+          Anna sat, and Dan ran.
+        </br>
+        </br>
+          A rat ran at Dan.
+        </br>
+        </br>
+          Can Anna fan the lad?
+        </br>
+        </br>
+          The man and the lad.
+        </br>
+        </br>
+          The man has a cap.
+        </br>
+        </br>
+          The lad has a fan.
+        </br>
+        </br>
+          Has Anna a hat?
+        </br>
+        </br>
+          Anna has a hat and a fan.
+                  </p>
+                  <button class="readToMe">Read to Me</button>
+                  <button class="readIt">I Read It!</button>
+               </div>
+
+<div class="stories" id="story6">
+         <h3>
+           Lesson 6
+         </h3>
+         <img src="./resources/images/lesson6.jpg" />
+        <p class="phrases">
+          <span>Dan’s cap</span>
+          <span>a fat dog</span>
+        </p>
+        <p>
+          Has the lad a dog?
+          <br />
+          <br />
+          The lad has a fat dog.
+          <br />
+          <br />
+          The dog has Dan’s cap.
+          <br />
+          <br />
+          Dan and Spot ran.
+          <br />
+          <br />
+          Spot ran at a cat.
+          </p>
+          <button class="readToMe">Read to Me</button>
+          <button class="readIt">I Read It!</button>
+       </div>
+
+<div class="stories" id="story7">
+         <h3>
+           Lesson 7
+         </h3>
+         <img src="./resources/images/lesson7.jpg" />
+        <p>
+        See the frog on a log.
+        <br />
+        <br />
+          Spot sees the frog.
+          <br />
+          <br />
+          Can the frog see Spot?
+          <br />
+          <br />
+          The frog can see the dog.
+          <br />
+          <br />
+          Spot ran at the frog.
+          </p>
+          <button class="readToMe">Read to Me</button>
+          <button class="readIt">I Read It!</button>
+       </div>
+
+<div class="stories" id="story8">
+         <h3>
+           Lesson 8
+         </h3>
+         <img src="./resources/images/lesson8.jpg" />
+        <p class="phrases">
+          <span>a mat</span>
+          <span>the stand</span>
+          <span>A cat</span>
+          <span>A rat</span>
+        </p>
+        <p>
+        See the lamp! It is on a mat.
+        <br />
+        <br />
+        The mat is on the stand.
+        <br />
+        <br />
+        The lamp is Nat’s, and the mat is Anna’s.
+          </p>
+          <button class="readToMe">Read to Me</button>
+          <button class="readIt">I Read It!</button>
+       </div>
+
+<div class="stories" id="story9">
+         <h3>
+           Lesson 9
+         </h3>
+         <img src="./resources/images/lesson9.jpg" />
+        <p>
+          See the horse? It is Tom’s horse.
+          <br />
+          <br />
+          Can Tom catch his horse?
+          <br />
+          <br />
+          He can not catch him.
+          <br />
+          <br />
+          The dog ran at the horse, and the horse ran.
+          </p>
+          <button class="readToMe">Read to Me</button>
+          <button class="readIt">I Read It!</button>
+       </div>
+
+<div class="stories" id="story10">
+         <h3>
+           Lesson 10
+         </h3>
+        <p>
+          Tom’s horse is fat; his dog is not fat.
+          <br />
+          <br />
+          Dan is on Tom’s horse.
+          <br />
+          <br />
+          Dan’s dog, Spot, can not catch the rat.
+          <br />
+          <br />
+          See the frog on the log.
+          <br />
+          <br />
+          A lad sees the frog.
+          <br />
+          <br />
+          The lad can not catch it.
+          <br />
+          <br />
+          A cat is on the mat; the cat sees a rat.
+          <br />
+          <br />
+          Anna’s fan is on the stand.
+          <br />
+          <br />
+          The man has a lamp.
+          <br />
+          <br />
+          A dog ran at the man.
+          <br />
+          <br />
+          Anna sat on a log.
+          </p>
+          <button class="readToMe">Read to Me</button>
+          <button class="readIt">I Read It!</button>
+       </div>
+
+<div class="stories" id="story11">
+         <h3>
+           Lesson 11
+         </h3>
+         <img src="./resources/images/lesson11.jpg" />
+        <p>
+          This is a fat hen.
+          <br />
+          <br />
+          The hen has a nest in the box.
+          <br />
+          <br />
+          She has eggs in the nest.
+          <br />
+          <br />
+          A cat sees the nest, and can get the eggs.
+          </p>
+          <button class="readToMe">Read to Me</button>
+          <button class="readIt">I Read It!</button>
+       </div>
+
+<div class="stories" id="story12">
+         <h3>
+           Lesson 12
+         </h3>
+         <img src="./resources/images/lesson12.jpg" />
+        <p>
+          Can this old fox catch the hen?
+          <br />
+          <br />
+          The fox can catch the hen, and get the eggs in the nest.
+          <br />
+          <br />
+          Run, Spot, and catch the fox.
+          </p>
+          <button class="readToMe">Read to Me</button>
+          <button class="readIt">I Read It!</button>
+       </div>
+
+<div class="stories" id="story13">
+         <h3>
+           Lesson 13
+         </h3>
+         <img src="./resources/images/lesson13.jpg" />
+        <p>
+          Emma is by the pond.
+          <br />
+          <br />
+          I see ducks on the pond.
+          <br />
+          <br />
+          Emma sees the ducks, and will feed them.
+          <br />
+          <br />
+          She can not get the ducks.
+          <br />
+          <br />
+          (Note: Today, we write can not as cannot. She cannot get the ducks.)
+          </p>
+          <button class="readToMe">Read to Me</button>
+          <button class="readIt">I Read It!</button>
+       </div>
+
+<div class="stories" id="story14">
+         <h3>
+           Lesson 14
+         </h3>
+         <img src="./resources/images/lesson14.jpg" />
+        <p>
+          This old man can not see.
+          <br />
+          <br />
+          He is blind.
+          <br />
+          <br />
+          Mary holds him by the hand.
+          <br />
+          <br />
+          She is kind to the old blind man.
+          </p>
+          <button class="readToMe">Read to Me</button>
+          <button class="readIt">I Read It!</button>
+       </div>
+
+<div class="stories" id="story15">
+         <h3>
+           Lesson 15
+         </h3>
+        <p>
+          I see ducks on the pond; Tom will feed them.
+          <br />
+          <br />
+          Tom is blind; he holds a box in his hand.
+          <br />
+          <br />
+          Emma is kind to him.
+          <br />
+          <br />
+          This old hen has a nest.
+          <br />
+          <br />
+          Mary will run and get the eggs.
+          </p>
+          <button class="readToMe">Read to Me</button>
+          <button class="readIt">I Read It!</button>
+       </div>
+
+<div class="stories" id="story16">
+         <h3>
+           Lesson 16
+         </h3>
+           <img src="./resources/images/lesson16.jpg" />
+        <p>
+          Sue has a doll.
+          <br />
+          <br />
+          It has a new dress.
+          <br />
+          <br />
+          She will let Anna hold the doll in her hands, and Anna will fan it.
+          <br />
+          <br />
+          Sue is kind to Anna.
+          </p>
+          <button class="readToMe">Read to Me</button>
+          <button class="readIt">I Read It!</button>
+       </div>
+
+<div class="stories" id="story17">
+                <h3>
+                  Lesson 17
+                </h3>
+                <img src="./resources/images/lesson17.jpg" />
+
+               <p>
+                 A bird is in the tree. It has a nest there.
+                 <br />
+                 <br />
+                 The nest has five eggs in it.
+                 <br />
+                 <br />
+                 Do not rob the nest.
+                 <br />
+                <br />
+                 Will the bird let the cat get her five eggs?
+                 </p>
+                <button class="readToMe">Read to Me</button>
+                <button class="readIt">I Read It!</button>
+              </div>
+
+<div class="stories" id="story18">
+                       <h3>
+                         Lesson 18
+                       </h3>
+                       <img src="./resources/images/lesson18.jpg" />
+
+                      <p>
+                        This is her pet bird.
+                        <br />
+                        <br />
+                        It lives in a new cage.
+                        <br />
+                        <br />
+                        It will stand on Sue's hand and sing.
+                        <br />
+                        <br />
+                        Sue loves her pet bird.
+                        <br />
+                        <br />
+                        So do I.
+                        </p>
+                       <button class="readToMe">Read to Me</button>
+                       <button class="readIt">I Read It!</button>
+                     </div>
+
+<div class="stories" id="story19">
+                              <h3>
+                                Lesson 19
+                              </h3>
+                              <img src="./resources/images/lesson19.jpg" />
+                             <p>
+                               Do you see the boys play?
+                               <br />
+                               <br />
+                               Yes, I see them; there are five of them.
+                               <br />
+                               <br />
+                               Tom is not so fast.
+                               <br />
+                               <br />
+                               Dan can run and catch him.
+                               <br />
+                               <br />
+                               I like to play too.
+                               </p>
+                              <button class="readToMe">Read to Me</button>
+                              <button class="readIt">I Read It!</button>
+                            </div>
+
+<div class="stories" id="story20">
+                                     <h3>
+                                       Lesson 20
+                                     </h3>
+                                    <p>
+                                      Sue has a doll and a pet bird.  Her doll has a new dress and a cap.  Sue loves Mary, and will let her hold the doll.
+                                      <br />
+                                      <br />
+                                      The pet bird lives in a cage. Sue and Mary will stand by the cage, and the bird will sing.
+                                      <br />
+                                      <br />
+                                      There are birds in the tree by the pond. Can you see them?
+                                      <br />
+                                      <br />
+                                        Yes; there are five of them in a nest.
+                                        <br />
+                                        <br />
+                                        Tom will not rob a bird's nest. He is too kind to do so.
+                                      </p>
+                                     <button class="readToMe">Read to Me</button>
+                                     <button class="readIt">I Read It!</button>
+                                   </div>
+
+
+<!--end of stories-->
+
+           <script
+             src="https://code.jquery.com/jquery-3.1.1.min.js"
+             integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+             crossorigin="anonymous"></script>
+            <script type="text/javascript" src="./resources/js/script.js"></script>
+
+         </body>
+       </html>
