@@ -8,7 +8,7 @@ lesson[4] = ['Lesson 4', ['man', './resources/audio/man.mp3'], ['cap','./resourc
 lesson[5] = ['Lesson 5', './resources/audio/story5.mp3', 'story5'];
 lesson[6] = ['Lesson 6', ['dog', './resources/audio/dog.mp3'], ['Spot','./resources/audio/spot.mp3'], ['fat','./resources/audio/fat.mp3'], ["Dan's",'./resources/audio/dans.mp3'], './resources/audio/explain6.mp3', './resources/audio/story6.mp3', 'story6'];
 lesson[7] = ['Lesson 7', ['see', './resources/audio/see.mp3'], ['sees','./resources/audio/sees.mp3'], ['frog','./resources/audio/frog.mp3'], ["on",'./resources/audio/on.mp3'], ["log",'./resources/audio/log.mp3'], './resources/audio/explain7.mp3', './resources/audio/story7.mp3', 'story7'];
-lesson[8] = ['Lesson 8', ['it', './resources/audio/it.mp3'], ['stand','./resources/audio/stand.mp3'], ["Anna's",'./resources/audio/annas.mp3'], ["is",'./resources/audio/is.mp3'], ["lamp",'./resources/audio/lamp.mp3'], ["mat",'./resources/audio/mat.mp3'], './resources/audio/explain8.mp3', './resources/audio/story8.mp3', 'story8'];
+lesson[8] = ['Lesson 8', ['it', './resources/audio/it.mp3'], ['lamp','./resources/audio/lamp.mp3'], ["is",'./resources/audio/is.mp3'], ["mat",'./resources/audio/mat.mp3'], ["stand",'./resources/audio/stand.mp3'], ["Anna's",'./resources/audio/annas.mp3'], './resources/audio/explain8.mp3', './resources/audio/story8.mp3', 'story8'];
 lesson[9] = ['Lesson 9', ['not', './resources/audio/not.mp3'], ['he','./resources/audio/he.mp3'], ["him",'./resources/audio/him.mp3'], ["his",'./resources/audio/his.mp3'], ["catch",'./resources/audio/catch.mp3'], ["Tom",'./resources/audio/tom.mp3'], ["horse",'./resources/audio/horse.mp3'], './resources/audio/explain9.mp3', './resources/audio/story9.mp3', 'story9'];
 lesson[10] = ['Lesson 10', './resources/audio/story10.mp3', 'story10'];
 lesson[11] = ['Lesson 11', ['in', './resources/audio/in.mp3'], ['eggs','./resources/audio/eggs.mp3'], ["hen",'./resources/audio/hen.mp3'], ["she",'./resources/audio/she.mp3'], ["box",'./resources/audio/box.mp3'], ["nest",'./resources/audio/nest.mp3'], ["get",'./resources/audio/get.mp3'], ["this",'./resources/audio/this.mp3'], './resources/audio/explain11.mp3', './resources/audio/story11.mp3', 'story11'];
@@ -172,6 +172,7 @@ function practiceWords($page, index, L) {
   if (wait === 2*L) {
     clickYes = 0;
     $('#yes').css('display', 'block');
+    wait++;
   } else {
     wait = wait + 1;
   } //closes else
