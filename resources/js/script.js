@@ -161,9 +161,10 @@ function writeStory($page, thisLesson) {
 function newWord($page, index, L) {
   console.log('new word');
       click = 0;
-      console.log('l ' + l);
+      console.log('l ' + l + ' clickRead' + clickRead);
   if (clickYes == 1) {
     $page.empty();
+    clickYes = 0;
     return;
   }
   if (clickRead == 1) {
