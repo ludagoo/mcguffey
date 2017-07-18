@@ -38,6 +38,8 @@ var index = 0;
 var l = 0;
 var wait = 0;
 var click = 0;
+var clickYes = 0;
+var clickRead = 0;
 var $page = $('#page');
 var $yes = $('#yes');
 var $lessonList = $("#lessonList");
@@ -109,6 +111,7 @@ function makePractice(lessonNumber) {
 
 //Button to read story
   $("#readButton").unbind().click(function() {
+    clickRead = 1;
     $('#endScreen').empty();
      writeStory($page, thisLesson);
   });
@@ -156,6 +159,14 @@ function newWord($page, index, L) {
   console.log('new word');
       click = 0;
       console.log('l ' + l);
+  if (clickYes == 1) {
+    $page.empty();
+    return;
+  }
+  if (clickRead == 1) {
+    $page.empty();
+    return;
+  }
   if (l < L-1) {
       l = l + 1;
       index = l;
