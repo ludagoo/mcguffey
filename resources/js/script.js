@@ -64,6 +64,9 @@ $(document).ready(function() {
       var lessonNumber = lessonNumber.slice(6);
       l = 0; //resets variable
       wait = 0; //resets variable
+      click = 0;
+      clickYes = 0;
+      clickRead = 0;
       makePractice(lessonNumber);
    });
 
