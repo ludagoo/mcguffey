@@ -253,7 +253,7 @@ h3 {
 }
 
 .stories img {
-  width: 90%;
+  width: 75%;
   height: auto;
 }
 
@@ -356,5 +356,10 @@ h2 {
      font-size: .9rem;
      padding: .5rem .5rem;
      margin: 0 .5rem;
+   }
+
+   .stories img {
+     width: 90%;
+     height: auto;
    }
 }
