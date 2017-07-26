@@ -56,6 +56,7 @@ lesson[52] = ['Lesson 52', ["nigh", './resources/audio/nigh.mp3'], ['say','./res
 
 var lessonNumber = 0;
 var practice = [];
+var repeat = [];
 var index = 0;
 var l = 0;
 var wait = 0;
@@ -149,6 +150,7 @@ function makePractice(lessonNumber) {
     var getStory = thisLesson[end];
       $('#'+ getStory).css('display', 'none');
       $("#readButton").css('display', 'none');
+      $('#yes').css('display', 'none');
      $lessonList.css('display', 'flex');
   });
 
@@ -231,7 +233,14 @@ function practiceWords($page, index, L) {
     wait = wait + 1;
   } //closes else
   var index = Math.floor(Math.random() * L);
+  repeat.push(index);
+  //keeps it from repeating a word more than twice
+  if (repeat[repeat.length-1] === repeat[repeat.length-2]) {
+    var index = Math.floor(Math.random() * L);
+    writeWords($page, practice, index, L);
+  } else {
   writeWords($page, practice, index, L);
+}; // closes else
 }; //closes practiceWords
 
 //Writes the new word or random word on the page
