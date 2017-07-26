@@ -183,6 +183,8 @@ function writeStory($page, thisLesson, lessonNumber) {
         //Moves to Next Lesson
         $(".next").unbind().click(function() {
           console.log('next lesson');
+          $('#lesson'+lessonNumber).css('background-image', 'none');
+          $('#lesson'+lessonNumber).css('color', '#000');
             $('#'+ getStory).empty();
           console.log('lesson number current ' + lessonNumber);
           lessonNumber++;
