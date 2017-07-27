@@ -185,7 +185,7 @@ function writeStory($page, thisLesson, lessonNumber) {
           console.log('next lesson');
           $('#lesson'+lessonNumber).css('background-image', 'none');
           $('#lesson'+lessonNumber).css('color', '#000');
-            $('#'+ getStory).empty();
+            $('#'+ getStory).css('display', 'none');
           console.log('lesson number current ' + lessonNumber);
           lessonNumber++;
           console.log('lesson number next ' + lessonNumber);
