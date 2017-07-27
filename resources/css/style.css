@@ -72,7 +72,6 @@ header {
   height: auto;
   margin: 0 auto;
   padding: 0;
-  padding-left: .7rem;
 }
 
 /*end header*/
@@ -88,6 +87,7 @@ button {
   padding: .2rem 1.5rem;
   margin: 0 .5rem;
   border: 2px solid #fff;
+  width: 200px;
 }
 
 button:hover {
@@ -193,7 +193,6 @@ button:hover {
 
 #lessonList {
   display: flex;
-  padding-right: .5rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
