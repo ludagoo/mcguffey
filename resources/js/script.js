@@ -38,7 +38,7 @@ lesson[34] = ['Lesson 34', ['put', './resources/audio/put.mp3'], ['ring','./reso
 lesson[35] = ['Lesson 35', './resources/audio/story35.mp3', 'story35'];
 lesson[36] = ['Lesson 36', ['keep', './resources/audio/keep.mp3'], ['tells','./resources/audio/tells.mp3'], ["that",'./resources/audio/that.mp3'], ["wants",'./resources/audio/wants.mp3'], ["each",'./resources/audio/each.mp3'], ["Miss",'./resources/audio/miss.mp3'], ["rule",'./resources/audio/rule.mp3'], ["good",'./resources/audio/good.mp3'], './resources/audio/explain36.mp3', './resources/audio/story36.mp3', 'story36'];
 lesson[37] = ['Lesson 37', ['child', './resources/audio/child.mp3'], ['when','./resources/audio/when.mp3'], ["books",'./resources/audio/books.mp3'], ["slates",'./resources/audio/slates.mp3'], ["church",'./resources/audio/church.mp3'], ["school",'./resources/audio/school.mp3'], './resources/audio/explain37.mp3', './resources/audio/story37.mp3', 'story37']
-lesson[38] = ['Lesson 38', ['Henry', './resources/audio/henry.mp3'], ['oh','./resources/audio/oh.mp3'], ["first",'./resources/audio/first.mp3'], ["seen",'./resources/audio/seen.mp3'], ["know",'./resources/audio/know.mp3'], ["kill",'./resources/audio/kill.mp3'], ["quick",'./resources/audio/quick.mp3'], ["me",'./resources/audio/me.mp3'], ["quail",'./resources/audio/quail.mp3'], ["eat",'./resources/audio/eat.mp3'], './resources/audio/explain38.mp3', './resources/audio/story38.mp3', 'story38'];
+lesson[38] = ['Lesson 38', ['Henry', './resources/audio/henry.mp3'], ['oh','./resources/audio/oh.mp3'], ["first",'./resources/audio/first.mp3'], ["seen",'./resources/audio/seen.mp3'], ["know",'./resources/audio/know.mp3'], ["kill",'./resources/audio/kill.mp3'], ["quick",'./resources/audio/quick.mp3'], ["me",'./resources/audio/me.mp3'], ["quail",'./resources/audio/quail.mp3'], ["eat",'./resources/audio/eat.mp3'], './resources/audio/explain38.mp3', './resources/audio/story38.mp3', 'story38']; 
 lesson[39] = ['Lesson 39', ['near', './resources/audio/near.mp3'], ['shut','./resources/audio/shut.mp3'], ["crib",'./resources/audio/crib.mp3'], ["name",'./resources/audio/name.mp3'], ["dear",'./resources/audio/dear.mp3'], ["blue",'./resources/audio/blue.mp3'], ["baby",'./resources/audio/baby.mp3'], ["sit",'./resources/audio/sit.mp3'], './resources/audio/explain39.mp3', './resources/audio/story39.mp3', 'story39'];
 lesson[40] = ['Lesson 40', './resources/audio/story40.mp3', 'story40'];
 lesson[41] = ['Lesson 41', ['far', './resources/audio/far.mp3'], ['were','./resources/audio/were.mp3'], ["sea",'./resources/audio/sea.mp3'], ["lights",'./resources/audio/lights.mp3'], ["tall",'./resources/audio/tall.mp3'], ["high",'./resources/audio/high.mp3'], ["its",'./resources/audio/its.mp3'], ["where",'./resources/audio/where.mp3'], './resources/audio/explain41.mp3', './resources/audio/story41.mp3', 'story41'];
@@ -75,7 +75,58 @@ var getStory = 1;
 
 var audio = document.createElement('audio');
 
-$(document).ready(function() {
+$(document).ready(function () {
+
+    (function() {
+
+        if (!window.localStorage) {
+            return;
+        }
+
+        /*
+            On entering the page, fetch the
+            clickedButtonIds list from localStorage
+            and update the buttons indicated.
+        */
+
+        var buttonsToUpdateString =
+            window.localStorage.getItem(
+                'clickedButtonIds'
+            );
+
+        if (buttonsToUpdateString) {
+
+            console.log(
+                'Updating ' + buttonsToUpdateString
+            );
+
+            var buttonsToUpdateArray =
+                buttonsToUpdateString.split('|');
+
+            var usableLength =
+                buttonsToUpdateArray.length - 1;
+
+            for (
+                var i = 0;
+                i < usableLength;
+                i++
+            ) {
+
+                console.log(
+                    'Updating ' + buttonsToUpdateArray[i]
+                );
+
+                var $btn =
+                    $('#' + buttonsToUpdateArray[i]);
+
+                $btn.css('background-image', 'none');
+                $btn.css('color', '#000');
+
+            }
+        }
+
+    })();
+
 
 //Pick a lesson
   $(".choose").click(function() {
@@ -90,6 +141,39 @@ $(document).ready(function() {
       click = 0;
       clickYes = 0;
       clickRead = 0;
+
+        (function(buttonId) {
+
+            if (!window.localStorage) {
+                return;
+            }
+
+            var clickedButtonIds =
+                window.localStorage.getItem(
+                    'clickedButtonIds'
+                );
+
+            if (clickedButtonIds) {
+                clickedButtonIds.replace(
+                    buttonId + '|',
+                    ''
+                );
+            }
+            else {
+                clickedButtonIds = '';
+            }
+
+            clickedButtonIds +=
+                buttonId + "|";
+
+            window.localStorage.setItem(
+                'clickedButtonIds',
+                clickedButtonIds
+            );
+
+        })(this.id);
+
+
       makePractice(lessonNumber);
    });
 
@@ -99,6 +183,7 @@ Contains Yes which is the click function to show the list of words
 at the end. Also has the buttons for reading the story and putting up
 the list of words*/
 function makePractice(lessonNumber) {
+  console.log('makePractice');
   practice = [];
   var thisLesson = lesson[lessonNumber];
   var long = thisLesson.length - 4;
@@ -158,6 +243,7 @@ function makePractice(lessonNumber) {
 
 //shows the story (which is in html)
 function writeStory($page, thisLesson, lessonNumber) {
+  console.log('write story');
    $('#readButton').css('display', 'none');
    var end = thisLesson.length - 1;
    var getStory = thisLesson[end];
@@ -180,10 +266,13 @@ function writeStory($page, thisLesson, lessonNumber) {
 
         //Moves to Next Lesson
         $(".next").unbind().click(function() {
+          console.log('next lesson');
           $('#lesson'+lessonNumber).css('background-image', 'none');
           $('#lesson'+lessonNumber).css('color', '#000');
             $('#'+ getStory).css('display', 'none');
+          console.log('lesson number current ' + lessonNumber);
           lessonNumber++;
+          console.log('lesson number next ' + lessonNumber);
           l = 0;
           wait = 0;
           click = 0;
@@ -197,7 +286,9 @@ function writeStory($page, thisLesson, lessonNumber) {
 
 //Writes the first set of words on the page in order
 function newWord($page, index, L) {
+  console.log('new word');
       click = 0;
+      console.log('l ' + l + ' clickRead' + clickRead);
   if (clickYes == 1) {
     $page.empty();
     clickYes = 0;
@@ -219,6 +310,7 @@ function newWord($page, index, L) {
 //Chooses the random words from the lesson, wait holds off showing checkmark
 //until two times the number of words in the lesson have shown randomly
 function practiceWords($page, index, L) {
+  console.log('practice words');
   if (wait === 2*L) {
     clickYes = 0;
     $('#yes').css('display', 'block');
@@ -239,6 +331,7 @@ function practiceWords($page, index, L) {
 
 //Writes the new word or random word on the page
 function writeWords($page, practice, index, L) {
+  console.log('write words');
   $page.empty();
   $page.css('display', 'flex');
   wordWritten = practice[index][0];
