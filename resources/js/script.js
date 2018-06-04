@@ -72,6 +72,7 @@ var explain;
 var story;
 var storyWritten;
 var getStory = 1;
+var audioIsPlaying = 0;
 
 var audio = document.createElement('audio');
 
