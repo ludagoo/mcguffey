@@ -5,7 +5,7 @@
 html {
   background-color: #fffff9;
   font-size: 20px;
-  font-family: Helvetica;
+    font-family: Helvetica;
 }
 /*This is the word being displayed section.*/
 #page {
@@ -27,7 +27,6 @@ html {
 
 /*This is the word being displayed.*/
 span {
-  font-family: Helvetica;
   color: black;
   font-size: 9rem;
   text-shadow: 2px 2px gray;
@@ -86,17 +85,26 @@ header {
 /*end header*/
 
 /*buttons*/
+#reset {
+  font-size: 1rem;
+  text-shadow: none;
+  cursor: pointer;
+  margin-bottom: auto;
+   text-decoration: underline;
+}
+
 button {
   outline: none;
   cursor: pointer;
   background-image: url('../images/chalkboard-background.jpg');
-  font-weight: 50;
+
   color: #fff;
   font-size: 1rem;
   padding: .2rem 1.5rem;
   margin: 0 .5rem;
   border: 2px solid #fff;
   width: 200px;
+  font-family: 'Quicksand', sans-serif;
 }
 
 button:hover {
@@ -203,11 +211,12 @@ button:hover {
   color: #fff;
   font-size: 1.2rem;
   text-shadow: none;
-  padding: 3px;
+  padding: 3px 5px;
   margin: 3px;
-  background-image: url('../images/chalkboard-background.jpg');
+  background-color: #1F683A;
   border: 1px solid #000;
   border-radius: 2px;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .choose:hover {
@@ -442,7 +451,7 @@ li {
 
 }
 
-@media only screen and (max-width: 640px) and (min-width: 480px) {
+@media only screen and (max-width: 740px) and (min-width: 480px) {
       .long {
         display: none;
       }

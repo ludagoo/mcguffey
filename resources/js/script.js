@@ -252,10 +252,20 @@ function writeStory($page, thisLesson, lessonNumber) {
 
 //Plays the story audio
     $(".readToMe").unbind().click(function() {
+      console.log("check" + audioIsPlaying);
+      if (audioIsPlaying == 1) {
+      return;
+    }
       var storyAudio = thisLesson.length - 2;
       var getStoryAudio = thisLesson[storyAudio];
       var audio = new Audio(getStoryAudio);
+      audioIsPlaying = 1;
+      console.log("assign" + audioIsPlaying);
       audio.play();
+      window.setTimeout(function() {
+        audioIsPlaying = 0;
+    }, 5000);
+      console.log("restore" + audioIsPlaying);
     });  //  closes read to me
 
 //Plays applause when you've read the story.
@@ -365,5 +375,20 @@ $('#closeDirections').click(function() {
         'display': 'none'
     });
 });
+/*  THis is for a reset button that will clear the marked lessons to start fresh.*/
+var $resetButton = $('#reset');
 
+$resetButton.click(
+
+    function() {
+
+        window.localStorage.removeItem(
+            'clickedButtonIds'
+        );
+
+        var $allTheChooseButtons = $('.choose');
+
+        $allTheChooseButtons.css('background-color', '#1F683A');
+        $allTheChooseButtons.css('color', '#fff');
+    });
   }); // closes document load
