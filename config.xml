@@ -16,5 +16,6 @@
   <author href="http://allinonehomeschool.com" email="allinonehomeschool@gmail.com">
       Lee Giles
   </author>
+  <icon src="res/icon.png" />
 
 </widget>
