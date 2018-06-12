@@ -120,7 +120,7 @@ $(document).ready(function () {
                 var $btn =
                     $('#' + buttonsToUpdateArray[i]);
 
-                $btn.css('background-image', 'none');
+                $btn.css('background-color', '#fffff9');
                 $btn.css('color', '#000');
 
             }
@@ -133,7 +133,7 @@ $(document).ready(function () {
   $(".choose").click(function() {
       $('#readButton').css('display', 'flex');
       $('#lessonList').css('display', 'none');
-      $(this).css('background-image', 'none');
+      $(this).css('background-color', '#fffff9');
       $(this).css('color', '#000');
       var lessonNumber = $(this).attr("id");
       var lessonNumber = lessonNumber.slice(6);
@@ -278,7 +278,7 @@ function writeStory($page, thisLesson, lessonNumber) {
         //Moves to Next Lesson
         $(".next").unbind().click(function() {
           console.log('next lesson');
-          $('#lesson'+lessonNumber).css('background-image', 'none');
+          $('#lesson'+lessonNumber).css('background-color', '#fffff9');
           $('#lesson'+lessonNumber).css('color', '#000');
             $('#'+ getStory).css('display', 'none');
           console.log('lesson number current ' + lessonNumber);
