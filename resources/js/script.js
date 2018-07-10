@@ -97,10 +97,6 @@ $(document).ready(function () {
 
         if (buttonsToUpdateString) {
 
-            console.log(
-                'Updating ' + buttonsToUpdateString
-            );
-
             var buttonsToUpdateArray =
                 buttonsToUpdateString.split('|');
 
@@ -112,10 +108,6 @@ $(document).ready(function () {
                 i < usableLength;
                 i++
             ) {
-
-                console.log(
-                    'Updating ' + buttonsToUpdateArray[i]
-                );
 
                 var $btn =
                     $('#' + buttonsToUpdateArray[i]);
@@ -184,7 +176,6 @@ Contains Yes which is the click function to show the list of words
 at the end. Also has the buttons for reading the story and putting up
 the list of words*/
 function makePractice(lessonNumber) {
-  console.log('makePractice');
   practice = [];
   var thisLesson = lesson[lessonNumber];
   var long = thisLesson.length - 4;
@@ -244,7 +235,6 @@ function makePractice(lessonNumber) {
 
 //shows the story (which is in html)
 function writeStory($page, thisLesson, lessonNumber) {
-  console.log('write story');
    $('#readButton').css('display', 'none');
    var end = thisLesson.length - 1;
    var getStory = thisLesson[end];
@@ -253,7 +243,6 @@ function writeStory($page, thisLesson, lessonNumber) {
 
 //Plays the story audio
     $(".readToMe").unbind().click(function() {
-      console.log("check" + audioIsPlaying);
       if (audioIsPlaying == 1) {
       return;
     }
@@ -261,12 +250,10 @@ function writeStory($page, thisLesson, lessonNumber) {
       var getStoryAudio = thisLesson[storyAudio];
       var audio = new Audio(getStoryAudio);
       audioIsPlaying = 1;
-      console.log("assign" + audioIsPlaying);
       audio.play();
       window.setTimeout(function() {
         audioIsPlaying = 0;
     }, 5000);
-      console.log("restore" + audioIsPlaying);
     });  //  closes read to me
 
 //Plays applause when you've read the story.
@@ -277,13 +264,10 @@ function writeStory($page, thisLesson, lessonNumber) {
 
         //Moves to Next Lesson
         $(".next").unbind().click(function() {
-          console.log('next lesson');
-          $('#lesson'+lessonNumber).css('background-color', '#fffff9');
+              $('#lesson'+lessonNumber).css('background-color', '#fffff9');
           $('#lesson'+lessonNumber).css('color', '#000');
             $('#'+ getStory).css('display', 'none');
-          console.log('lesson number current ' + lessonNumber);
           lessonNumber++;
-          console.log('lesson number next ' + lessonNumber);
           l = 0;
           wait = 0;
           click = 0;
@@ -297,9 +281,7 @@ function writeStory($page, thisLesson, lessonNumber) {
 
 //Writes the first set of words on the page in order
 function newWord($page, index, L) {
-  console.log('new word');
       click = 0;
-      console.log('l ' + l + ' clickRead' + clickRead);
   if (clickYes == 1) {
     $page.empty();
     clickYes = 0;
@@ -321,7 +303,6 @@ function newWord($page, index, L) {
 //Chooses the random words from the lesson, wait holds off showing checkmark
 //until two times the number of words in the lesson have shown randomly
 function practiceWords($page, index, L) {
-  console.log('practice words');
   if (wait === 2*L) {
     clickYes = 0;
     $('#yes').css('display', 'block');
@@ -342,7 +323,6 @@ function practiceWords($page, index, L) {
 
 //Writes the new word or random word on the page
 function writeWords($page, practice, index, L) {
-  console.log('write words');
   $page.empty();
   $page.css('display', 'flex');
   wordWritten = practice[index][0];
