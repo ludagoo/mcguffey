@@ -155,18 +155,19 @@ button:hover {
     margin-bottom: 100px;
 }
 
-#closeDirections {
+.closeDirections {
   font-size: 2rem;
   cursor: pointer;
   text-align: center;
-  background-color: #e60000;
+  background-color: #ab0000;
   border-radius: 2px;
   -webkit-transition-duration: 300ms;
        -o-transition-duration: 300ms;
           transition-duration: 300ms;
+  margin: auto 0;
 }
 
-#closeDirections:hover {
+.closeDirections:hover {
   background-color: #fffff9;
 }
 

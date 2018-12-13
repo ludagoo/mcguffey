@@ -351,7 +351,7 @@ $('#directions').click(function() {
     });
 });
 
-$('#closeDirections').click(function() {
+$('.closeDirections').click(function() {
     $('.directions').css({
         'display': 'none'
     });
