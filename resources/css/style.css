@@ -136,7 +136,7 @@ button:hover {
 
 .readToMe,
 .readIt,
-.next {
+.unorderedList {
        width: 9rem;
        height: auto;
     margin: 1rem;
@@ -441,7 +441,7 @@ li {
 
    .readToMe,
    .readIt,
-   .next {
+   .unorderedList {
        margin: .25rem;
    }
 

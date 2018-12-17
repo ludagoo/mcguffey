@@ -219,6 +219,16 @@ function makePractice(lessonNumber) {
   });
 
 //button click that shows list of lessons
+  $(".unorderedList").unbind().click(function() {
+     $page.empty();
+    $('#endScreen').empty();
+    var end = thisLesson.length - 1;
+    var getStory = thisLesson[end];
+      $('#'+ getStory).css('display', 'none');
+      $("#readButton").css('display', 'none');
+      $('#yes').css('display', 'none');
+     $lessonList.css('display', 'flex');
+  });
   $("#unorderedList").unbind().click(function() {
      $page.empty();
     $('#endScreen').empty();
@@ -262,6 +272,7 @@ function writeStory($page, thisLesson, lessonNumber) {
           audio.play();
         }); // closes play cheer
 
+/*
         //Moves to Next Lesson
         $(".next").unbind().click(function() {
               $('#lesson'+lessonNumber).css('background-color', '#fffff9');
@@ -276,6 +287,7 @@ function writeStory($page, thisLesson, lessonNumber) {
           $('#readButton').css('display', 'flex');
           makePractice(lessonNumber);
         }); // closes next lesson
+    */
 
 }; // closes writeStory
 
