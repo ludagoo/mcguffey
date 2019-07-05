@@ -32,6 +32,7 @@ span {
   text-shadow: 2px 2px gray;
   cursor: pointer;
   margin-bottom: 2rem;
+  padding: 0 2rem 2rem 2rem;
 }
 
 /*Header and logo are the EP banner*/

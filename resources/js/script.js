@@ -189,6 +189,15 @@ function makePractice(lessonNumber) {
   var explain = thisLesson[explainAudio];
 
   $yes.unbind().click(function() {
+    console.log("yes clicked");
+    practice = [];
+    var thisLesson = lesson[lessonNumber];
+    var long = thisLesson.length - 4;
+    for (var i=1; i <= long; i++ ) {
+      practice.push(thisLesson[i]);
+      var L = practice.length;
+    } //closes for
+
     if (clickYes === 0) {
       clickYes = 1; //so they can't double click and play the audio twice
     $page.css('display', 'none');
@@ -272,24 +281,11 @@ function writeStory($page, thisLesson, lessonNumber) {
           audio.play();
         }); // closes play cheer
 
-/*
-        //Moves to Next Lesson
-        $(".next").unbind().click(function() {
-              $('#lesson'+lessonNumber).css('background-color', '#fffff9');
-          $('#lesson'+lessonNumber).css('color', '#000');
-            $('#'+ getStory).css('display', 'none');
-          lessonNumber++;
-          l = 0;
-          wait = 0;
-          click = 0;
-          clickYes = 0;
-          clickRead = 0;
-          $('#readButton').css('display', 'flex');
-          makePractice(lessonNumber);
-        }); // closes next lesson
-    */
-
 }; // closes writeStory
+
+function shuffle(practice) {
+practice.sort(() => Math.random() - 0.5);
+}
 
 //Writes the first set of words on the page in order
 function newWord($page, index, L) {
@@ -307,31 +303,37 @@ function newWord($page, index, L) {
       l = l + 1;
       index = l;
       writeWords($page, practice, index, L);
-  } else {
-      practiceWords($page, index, L);
-  } //closes else
+      return;
+  } //closes if
+  if (wait == 0) {
+    l = 0;
+    shuffle(practice);
+    console.log("shuffle");
+    writeWords($page, practice, index, L);
+    wait = 1;
+    return;
+  }
+  if (wait == 1) {
+    l = 0;
+    shuffle(practice);
+    console.log("shuffle");
+    writeWords($page, practice, index, L);
+    wait = 2;
+    return;
+  }
+  if (wait == 2){
+      $('#yes').css('display', 'block');
+        l = 0;
+        shuffle(practice);
+        console.log("shuffle");
+        writeWords($page, practice, index, L);
+        wait = 2;
+        return;
+  }
 }; //closes newWord
 
 //Chooses the random words from the lesson, wait holds off showing checkmark
 //until two times the number of words in the lesson have shown randomly
-function practiceWords($page, index, L) {
-  if (wait === 2*L) {
-    clickYes = 0;
-    $('#yes').css('display', 'block');
-    wait++;
-  } else {
-    wait = wait + 1;
-  } //closes else
-  var index = Math.floor(Math.random() * L);
-  repeat.push(index);
-  //keeps it from repeating a word more than twice
-  if (repeat[repeat.length-1] === repeat[repeat.length-2]) {
-    var index = Math.floor(Math.random() * L);
-    writeWords($page, practice, index, L);
-  } else {
-  writeWords($page, practice, index, L);
-}; // closes else
-}; //closes practiceWords
 
 //Writes the new word or random word on the page
 function writeWords($page, practice, index, L) {
@@ -349,7 +351,7 @@ function writeWords($page, practice, index, L) {
     click = 1;
   window.setTimeout(function() {
     newWord($page, index, L);
-}, 2000);
+}, 3000);
 }; // closes if
 }); //closes page click
 
